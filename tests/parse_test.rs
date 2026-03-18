@@ -1,6 +1,7 @@
 // Quick integration test for the parser
 // Run with: cargo test --test parse_test -- --nocapture
 
+#[cfg(target_os = "windows")]
 #[tokio::test]
 async fn test_winget_list_parsing() {
     let output = tokio::process::Command::new("winget")
